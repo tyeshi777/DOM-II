@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
 });
 
 const navigation = document.querySelectorAll("a");
-console.log(navigation);
+// console.log(navigation);
 navigation.forEach(item => {
   item.addEventListener("mouseenter", function(event) {
     event.target.style.color = "red";
@@ -34,7 +34,6 @@ funBus.addEventListener("dblclick", function(event) {
   event.target.style.height = "500px";
 });
 
-// let home = document.querySelector(".home");
 window.addEventListener("keydown", function(event) {
   console.log(`you pressed down this key ${event.key}`);
 });
@@ -44,4 +43,24 @@ function display() {
   const x = document.querySelector(".text-content");
   x.style.background = "purple";
   x.style.color = "white";
+}
+
+var input = document.querySelectorAll(".input");
+input.forEach(item => {
+  item.addEventListener("focus", function(event) {
+    event.target.style.backgroundColor = "red";
+    event.target.style.color = "white";
+  });
+});
+
+window.addEventListener(
+  "scroll",
+  function(event) {
+    console.log(event);
+  },
+  true
+);
+
+function mySelectFunction() {
+  document.getElementById("myText").select();
 }

@@ -62,26 +62,27 @@ btn.forEach(item => {
   });
 });
 
-const funBus = document.querySelector(".fun-bus");
-funBus.addEventListener("mouseover", function(event) {
-  event.target.style.borderRadius = "100px";
-  event.target.style.transform = "rotate(10deg)";
-  event.target.style.animation = "rotate .8s infinite linear";
-});
-
-funBus.addEventListener("mouseout", function(event) {
-  event.target.style.transform = "rotate(0deg)";
-  event.target.style.animation = "rotate .8s infinite linear";
-});
-
 window.addEventListener("keydown", function(event) {
   console.log(`you pressed down this key ${event.key}`);
 });
 
 window.addEventListener("resize", display);
 function display() {
-  const x = document.querySelector(".text-content");
+  const x = document.querySelectorAll(".text-content");
+  x.forEach(function(event) {
+    event.style.background = "purple";
+    event.style.padding = "20px";
+    event.style.borderRadius = "30px";
+    event.style.color = "white";
+  });
+}
+
+window.addEventListener("resize", play);
+function play() {
+  const x = document.querySelector("adAwaits");
   x.style.background = "purple";
+  x.style.padding = "20px";
+  x.style.borderRadius = "30px";
   x.style.color = "white";
 }
 
@@ -103,8 +104,10 @@ input.forEach(item => {
 
 window.addEventListener(
   "scroll",
-  function(event) {
-    console.log(event);
+  function() {
+    const mainNavig = document.querySelector(".main-navigation");
+    mainNavig.style.background = "crimson";
+    mainNavig.style.color = "white";
   },
   true
 );

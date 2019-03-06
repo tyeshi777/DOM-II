@@ -333,6 +333,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
   width: 200px;
   height: 50px;
   padding: 10px;
